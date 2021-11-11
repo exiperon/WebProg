@@ -1,0 +1,44 @@
+//1
+let a = {}
+function A() {return a}
+function B() {return a}
+
+console.log(new A() == new B())
+
+//2
+function Calculator() {
+
+  this.read = function() {
+    this.a = +prompt('a?', 0);
+    this.b = +prompt('b?', 0);
+  };
+
+  this.sum = function() {
+    return this.a + this.b;
+  };
+
+  this.mul = function() {
+    return this.a * this.b;
+  };
+}
+
+let calculator = new Calculator();
+calculator.read();
+
+alert(calculator.sum());
+alert(calculator.mul());
+
+//3
+function Constructor(startingValue) {
+  this.value = startingValue;
+
+  this.read = function() {
+    this.value += +prompt('Додати', 0);
+  };
+
+}
+
+let constructor = new Constructor(0);
+constructor.read();
+constructor.read();
+alert(constructor.value);
