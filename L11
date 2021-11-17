@@ -1,0 +1,68 @@
+1)
+function readNumber() {
+  let num = 0
+  while(true) {
+    num = prompt('Number')
+    if(num == null) {
+      return 0
+    }
+    else if(isNaN(num)) {
+      continue
+    }
+    else{
+      return num
+    }
+  }
+}
+
+console.log(readNumber())
+
+2)
+function random(min, max){
+    return (Math.floor(Math.pow(10,14)*Math.random()*Math.random())%(max-min))+min;
+}
+
+console.log(random(0, 0.2))
+
+3)
+let num1 = prompt('Num1')
+let num2 = prompt('Num2') 
+
+console.log(Number(num1) + Number(num2))
+
+4)
+let array=[ 
+" Спочатку JavaScript був створений, щоб зробити веб-сторінки живими ", 
+" Різні двигуни мають різні «кодові імена».",
+ " Коли JavaScript створювався, він мав інше ім'я – «LiveScript» ",
+ " Повна інтеграція з HTML/CSS "
+]
+
+for(let i = 0; i < array.length; i++) {
+  if(array[i].indexOf("JavaScript") > -1) {
+    console.log(array[i])
+  }
+}
+
+5)
+var str = 'бУквА'
+
+function set(str,index,chr) {
+    if(index > str.length-1) return str;
+    return str.substring(0,index) + chr + str.substring(index+1);
+}
+
+function ltr_case_norm(str) {
+  if(str.charCodeAt(0) >= 1072) {
+    str = set(str, 0, String.fromCharCode(str.charCodeAt(0) - 32))
+  }
+  for(let i = 1; i < str.length; i++) {
+    if(str.charCodeAt(i) < 1072) {
+      str = set(str, i, String.fromCharCode(str.charCodeAt(i) + 32))
+    }
+  }
+
+  return str
+}
+
+console.log(ltr_case_norm(str))
