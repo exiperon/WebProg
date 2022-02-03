@@ -1,0 +1,15 @@
+// 1
+for (var li of document.querySelectorAll('li')) {
+  console.log(li.innerText)
+}
+
+// 2
+<html>
+  <body>
+    <script>
+       alert(document.body.lastChild.nodeType) // 1
+    </script>
+  </body>
+</html>
+
+// Output: 1
