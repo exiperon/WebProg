@@ -2,6 +2,7 @@
 for (var li of document.querySelectorAll('li')) {
   console.log(li.innerText)
 }
+console.log(document.querySelectorAll('li').length)
 
 // 2
 <html>
